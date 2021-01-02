@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+	$db = new PDO("mysql:host=127.0.0.1;dbname=20201229;charset=utf8", "root", "");
+	$row = $db->query("SELECT * FROM board WHERE idx = '{$_GET['idx']}'") -> fetch(PDO::FETCH_OBJ);
+?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -6,26 +10,26 @@
 	<title>게시물 작성</title>
 </head>
 <body>
-	<form action="./write_ok.php" method="post">  <!-- POST 방식 보안을 위해 네이버 검색창 = GET 방식으로 주소창을 수정하면 내용이 바뀜 보안과 관련 없는건 GET방식-->
+	<form action="./update_ok.php?idx=<?php echo $_GET['idx']?>" method="post"> 
 		<fieldset>
 			<legend>글작성</legend>
 			<ui>
 				<li>
 					<label>
 						제목
-						<input type="text" name="subject" />
+						<input type="text" name="subject" value="<?php echo $row ->subject?>" />
 					</label>
 				</li>
 				<li>
 					<label>
 						작성자
-						<input type="text" name="writer" />
+						<input type="text" name="writer" value="<?php echo $row ->writer?>" />
 					</label>
 				</li>
 				<li>
 					<label>
 						내용
-						<input type="text" name="content" />
+						<input type="text" name="content" value="<?php echo $row ->content?>"/>
 					</label>
 				</li>
 			</ui>

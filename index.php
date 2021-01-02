@@ -23,7 +23,7 @@
 		<?php foreach ($rows as $row): ?>
 			<li>
 				<?php echo $row->idx ?>	/
-				<?php echo $row->subject ?>	/
+				<a href="./view.php?idx=<?php echo $row -> idx?>"><?php echo $row->subject ?></a>	/ <!-- ? 붙는순간 GET 방식을 사용하겠다 라는 의미  -->
 				<?php echo $row->writer ?>	/
 				<?php echo $row->reg_date ?>	/
 			</li>
