@@ -1,36 +1,25 @@
 <?php 
 	$db = new PDO("mysql:host=127.0.0.1;dbname=20201229;charset=utf8", "root", "");
-	$rows = $db->query("SELECT * FROM board") -> fetchAll(PDO::FETCH_OBJ);
-
-
-	// print_r($rows);
-
-	// foreach ($rows[0] as $key => $value) {
-	// 	echo "<p> {$key} => {$value} </p>";
-	// }
-	// exit;
+	$page = $_GET['page'] ?? 'list';
+	$idx = $_GET['idx'] ?? NULL;
+	$titles = [
+		'list' => '게시물 목록',
+		'view' => '게시물 조회',
+		'update' => '게시물 수정',
+		'write' => '게시물 작성'
+	]
 	
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>게시물 목록</title>
+	<title><?php echo $titles[$page]?></title>
 </head>
 <body>
-	<ul>
-		<?php foreach ($rows as $row): ?>
-			<li>
-				<?php echo $row->idx ?>	/
-				<a href="./view.php?idx=<?php echo $row -> idx?>"><?php echo $row->subject ?></a>	/ <!-- ? 붙는순간 GET 방식을 사용하겠다 라는 의미  -->
-				<?php echo $row->writer ?>	/
-				<?php echo $row->reg_date ?>	/
-			</li>
-		<?php endforeach ?>
-	</ul>
-	<p>
-		<a href="./write.php">글작성</a>
-	</p>
+	<p><?php echo $page?></p>
+	<?php include_once("./{$page}.php")?>
 </body>
 </html> 
