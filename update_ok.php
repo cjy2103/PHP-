@@ -8,7 +8,7 @@
 		WHERE idx = '{$_GET['idx']}'
 	";
 	if ($db->query($sql)){
-			header("location:./view.php?idx={$_GET['idx']}");
+			header("location:./?page=view&idx={$_GET['idx']}");
 	} else{
 		print_r($db->errorInfo());
 	}

@@ -6,7 +6,7 @@
 	";
 	if ($db->query($sql)){
 		$idx = $db ->lastInsertID();	
-		header("location:./view.php?idx={$idx}");
+		header("location:./?page=view&idx={$idx}");
 	} else{
 		print_r($db->errorInfo());
 	}

@@ -1,8 +1,8 @@
 <?php 
-	$row = $db->query("SELECT * FROM board WHERE idx = '{$_GET['idx']}'") -> fetch(PDO::FETCH_OBJ);
+	$row = $db->query("SELECT * FROM board WHERE idx = '{$idx}'") -> fetch(PDO::FETCH_OBJ);
 ?>
 
-<form action="./update_ok.php?idx=<?php echo $_GET['idx']?>" method="post"> 
+<form action="./update_ok.php?idx=<?php echo $idx?>" method="post">
 	<fieldset>
 		<legend>글작성</legend>
 		<ui>
