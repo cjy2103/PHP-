@@ -12,5 +12,5 @@
 	<?php endforeach ?>
 </ul>
 <p>
-	<a href="./write.php">글작성</a>
+	<a href="./?page=write">글작성</a>
 </p>

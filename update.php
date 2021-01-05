@@ -2,9 +2,10 @@
 	$row = $db->query("SELECT * FROM board WHERE idx = '{$idx}'") -> fetch(PDO::FETCH_OBJ);
 ?>
 
-<form action="./update_ok.php?idx=<?php echo $idx?>" method="post">
+<form action="" method="post">
 	<fieldset>
 		<legend>글작성</legend>
+		<input type="hidden" name="action" value="update"> 
 		<ui>
 			<li>
 				<label>

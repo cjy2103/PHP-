@@ -1,7 +1,7 @@
-
-<form action="./write_ok.php" method="post">  <!-- POST 방식 보안을 위해 네이버 검색창 = GET 방식으로 주소창을 수정하면 내용이 바뀜 보안과 관련 없는건 GET방식-->
+<form action="" method="post">
 	<fieldset>
 		<legend>글작성</legend>
+    	<input type="hidden" name="action" value="insert"> 
 		<ui>
 			<li>
 				<label>

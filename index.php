@@ -12,6 +12,10 @@
 		'write' => '게시물 작성'
 	];
 	
+	if (isset($_POST['action'])){ 
+		include_once('./action.php');
+		exit;
+		}
 
  ?>
 <!DOCTYPE html>
