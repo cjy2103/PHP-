@@ -1,7 +1,6 @@
  <?php
- 	$db = new PDO("mysql:host=127.0.0.1;dbname=20201229;charset=utf8", "root", "");
-
 	
+
 	$page = $_GET['page'] ?? 'list';
 	$idx = $_GET['idx'] ?? NULL;
 

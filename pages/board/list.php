@@ -1,5 +1,5 @@
 <?php
-	$rows = $db->query("SELECT * FROM board") -> fetchAll(PDO::FETCH_OBJ);
+	$rows = fetchAll("SELECT * FROM board");
 ?>
 <ul>
 	<?php foreach ($rows as $row): ?>

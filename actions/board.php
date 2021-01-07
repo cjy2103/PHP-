@@ -27,9 +27,9 @@ extract($_POST);
 	}
 
 
-	if ($db->query($sql)){
-		header("Location:$url");
-	} else{
-		echo "<p>{$sql}</p>";
-		print_r($db->errorInfo());
-	}
+	query($sql);
+
+	alert('완료되었습니다.');
+	move($url);
+	
+	

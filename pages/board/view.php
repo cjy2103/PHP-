@@ -1,5 +1,5 @@
 <?php 
-	$row = $db->query( "SELECT * FROM board WHERE idx = '{$idx}'") -> fetch(PDO::FETCH_OBJ);
+	$row = fetch( "SELECT * FROM board WHERE idx = '{$idx}'");
 ?>
 <form action ="" method = "post" name="deleteForm">
 	<input type="hidden" name="action" value="delete"> 
