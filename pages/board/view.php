@@ -13,8 +13,8 @@
 
 </ul>
 <p>
-	<a href="./">글목록</a>
-	<a href="./?page=update&amp;idx=<?php echo $idx?>">글수정</a>
+	<a href="/">글목록</a>
+	<a href="/update/<?php echo $idx?>">글수정</a>
 	<a href="#" onclick="deleteForm.submit();">글삭제</a>
-	<a href="./?page=write">글작성</a>
+	<a href="/write">글작성</a>
 </p>

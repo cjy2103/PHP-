@@ -1,8 +1,8 @@
  <?php
-	
+	$param = isset($_GET['param']) ? explode('/',$_GET['param']) : [];
+	$page =  $param[0] ?? 'list';
+	$idx  =  $param[1] ?? NULL;
 
-	$page = $_GET['page'] ?? 'list';
-	$idx = $_GET['idx'] ?? NULL;
 
 	$titles = [
 		'list' => '게시물 목록',
